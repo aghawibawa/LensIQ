@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LensIQ - Photography Science Lab</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="currentColor"
+        class="bi bi-caret-up-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"
+        />
+      </svg>
+    </button>
+
+    <div class="scan-overlay"></div>
+
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-brand">
+          <div class="logo-bracket">[</div>
+          <span class="logo-text">LensIQ</span>
+          <div class="logo-bracket">]</div>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="analyzer.html">EXIF Analyzer</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="viewfinder-tl"></div>
+      <div class="viewfinder-tr"></div>
+      <div class="viewfinder-bl"></div>
+      <div class="viewfinder-br"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="data-label">SYSTEM_INIT</div>
+          <h1 class="hero-title">
+            Mastering Photography<br />
+            Through <span class="gradient-text">Photo Analysis</span>
+          </h1>
+          <p class="hero-subtitle">
+            Decode the science behind perfect shots. Analyze EXIF data,
+            understand exposure, and elevate your craft with data-driven
+            insights.
+          </p>
+          <div class="hero-actions">
+            <a href="analyzer.html" class="btn btn-primary">
+              <span>Launch Analyzer</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M4 10H16M16 10L11 5M16 10L11 15"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+            <a href="courses.html" class="btn btn-outline">Explore Courses</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-value">15K+</div>
+              <div class="stat-label">Active Students</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-value">200K+</div>
+              <div class="stat-label">Photos Analyzed</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-value">98%</div>
+              <div class="stat-label">Success Rate</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="data-panel">
+            <div class="panel-header">
+              <span class="panel-label">LIVE_ANALYSIS</span>
+              <div class="pulse-indicator"></div>
+            </div>
+            <div class="exif-preview">
+              <div class="exif-row">
+                <span class="exif-key">FOCAL_LENGTH</span>
+                <span class="exif-value">50mm</span>
+              </div>
+              <div class="exif-row">
+                <span class="exif-key">APERTURE</span>
+                <span class="exif-value">f/1.8</span>
+              </div>
+              <div class="exif-row">
+                <span class="exif-key">SHUTTER_SPEED</span>
+                <span class="exif-value">1/125s</span>
+              </div>
+              <div class="exif-row">
+                <span class="exif-key">ISO</span>
+                <span class="exif-value">400</span>
+              </div>
+            </div>
+            <div class="analysis-graph">
+              <canvas id="miniHistogram" width="300" height="120"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="section-header">
+          <div class="data-label">CORE_MODULES</div>
+          <h2 class="section-title">Platform Features</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect
+                  x="5"
+                  y="5"
+                  width="30"
+                  height="30"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+                <path d="M5 15H35M15 5V35" stroke="#39d0c5" stroke-width="2" />
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="5"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">EXIF Analyzer</h3>
+            <p class="feature-desc">
+              Extract and analyze metadata from your photos. Get instant
+              insights on exposure settings, camera specs, and shooting
+              conditions.
+            </p>
+            <a href="analyzer.html" class="feature-link">Analyze Photos →</a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path
+                  d="M5 35L15 20L22 28L35 10"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+                <rect x="8" y="28" width="3" height="7" fill="#39d0c5" />
+                <rect x="15" y="22" width="3" height="13" fill="#39d0c5" />
+                <rect x="22" y="25" width="3" height="10" fill="#39d0c5" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Histogram Engine</h3>
+            <p class="feature-desc">
+              Visualize exposure distribution with RGB histograms. Understand
+              tonal ranges and identify exposure issues instantly.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="15"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+                <path d="M20 10V20L27 27" stroke="#39d0c5" stroke-width="2" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Smart Tips Engine</h3>
+            <p class="feature-desc">
+              AI-powered recommendations based on your photo's settings. Learn
+              from every shot with context-aware advice.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect
+                  x="8"
+                  y="12"
+                  width="24"
+                  height="18"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+                <path d="M8 18H32" stroke="#39d0c5" stroke-width="2" />
+                <circle cx="15" cy="24" r="2" fill="#39d0c5" />
+                <circle cx="25" cy="24" r="2" fill="#39d0c5" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Premium Courses</h3>
+            <p class="feature-desc">
+              Share your work, get feedback, and learn from photographers
+              worldwide. Join challenges and competitions.
+            </p>
+            <a href="courses.html" class="feature-link">Browse Courses →</a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <circle
+                  cx="12"
+                  cy="15"
+                  r="5"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+                <circle
+                  cx="28"
+                  cy="15"
+                  r="5"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+                <circle
+                  cx="20"
+                  cy="28"
+                  r="5"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+                <path
+                  d="M16 18L15 23M24 18L25 23"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">Community Hub</h3>
+            <p class="feature-desc">
+              Bagikan karya Anda, dapatkan feedback, dan belajar dari fotografer
+              di seluruh dunia. Ikuti tantangan dan kompetisi.
+            </p>
+            <a href="community.html" class="feature-link">Join Community →</a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path
+                  d="M20 5L23 17H35L25 24L28 36L20 29L12 36L15 24L5 17H17L20 5Z"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-title">Expert Mentorship</h3>
+            <p class="feature-desc">
+              Get personalized guidance from professional photographers.
+              Portfolio reviews and personal career advice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase">
+      <div class="container">
+        <div class="section-header">
+          <div class="data-label">VISUAL_DATABASE</div>
+          <h2 class="section-title">Recent Analyses</h2>
+        </div>
+        <div class="showcase-grid" id="showcaseGrid">
+          <div
+            class="showcase-item"
+            data-exif='{"focal":"35mm","aperture":"f/2.8","shutter":"1/250s","iso":"200"}'
+          >
+            <img
+              src="https://images.pexels.com/photos/1252869/pexels-photo-1252869.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Sample"
+            />
+            <div class="showcase-overlay">
+              <div class="exif-overlay">
+                <div class="exif-item">35mm</div>
+                <div class="exif-item">f/2.8</div>
+                <div class="exif-item">1/250s</div>
+                <div class="exif-item">ISO 200</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="showcase-item"
+            data-exif='{"focal":"50mm","aperture":"f/1.8","shutter":"1/100s","iso":"400"}'
+          >
+            <img
+              src="https://images.pexels.com/photos/1421903/pexels-photo-1421903.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Sample"
+            />
+            <div class="showcase-overlay">
+              <div class="exif-overlay">
+                <div class="exif-item">50mm</div>
+                <div class="exif-item">f/1.8</div>
+                <div class="exif-item">1/100s</div>
+                <div class="exif-item">ISO 400</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="showcase-item"
+            data-exif='{"focal":"85mm","aperture":"f/1.4","shutter":"1/500s","iso":"100"}'
+          >
+            <img
+              src="https://images.pexels.com/photos/1090387/pexels-photo-1090387.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Sample"
+            />
+            <div class="showcase-overlay">
+              <div class="exif-overlay">
+                <div class="exif-item">85mm</div>
+                <div class="exif-item">f/1.4</div>
+                <div class="exif-item">1/500s</div>
+                <div class="exif-item">ISO 100</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <img src="assets/Logo LensIQ.png" alt="" class="logo" />
+            <p class="footer-tagline">Learn From Your Moment</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Platform</h4>
+              <ul>
+                <li><a href="analyzer.html">EXIF Analyzer</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="community.html">Community</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 LensIQ. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

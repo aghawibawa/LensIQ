@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses - LensIQ</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="courses-page">
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="currentColor"
+        class="bi bi-caret-up-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"
+        />
+      </svg>
+    </button>
+
+    <div class="scan-overlay"></div>
+
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-brand">
+          <div class="logo-bracket">[</div>
+          <span class="logo-text">LensIQ</span>
+          <div class="logo-bracket">]</div>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="analyzer.html">EXIF Analyzer</a></li>
+          <li><a href="courses.html" class="active">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="data-label">LEARNING_MODULES</div>
+        <h1 class="page-title">Photography Courses</h1>
+        <p class="page-subtitle">
+          Master photography through structured, science-backed learning paths
+        </p>
+      </div>
+    </section>
+
+    <section class="courses-section">
+      <div class="container">
+        <div class="courses-filter">
+          <button class="filter-btn active" data-filter="all">
+            All Courses
+          </button>
+          <button class="filter-btn" data-filter="beginner">Beginner</button>
+          <button class="filter-btn" data-filter="intermediate">
+            Intermediate
+          </button>
+          <button class="filter-btn" data-filter="advanced">Advanced</button>
+        </div>
+
+        <div class="courses-grid">
+          <div class="course-card" data-level="beginner">
+            <div class="course-image">
+              <img
+                src="https://images.pexels.com/photos/606541/pexels-photo-606541.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Course"
+              />
+              <div class="course-badge">BEGINNER</div>
+            </div>
+            <div class="course-content">
+              <h3 class="course-title">Photography Fundamentals</h3>
+              <p class="course-desc">
+                Master the exposure triangle, composition rules, and camera
+                settings. Build a solid foundation for your photography journey.
+              </p>
+              <div class="course-meta">
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M8 2V8L12 10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="6"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>8 weeks</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect
+                      x="2"
+                      y="4"
+                      width="12"
+                      height="10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M5 2V4M11 2V4"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>24 lessons</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle
+                      cx="8"
+                      cy="5"
+                      r="2.5"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M2 14C2 11 4.5 9 8 9C11.5 9 14 11 14 14"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>3.2K students</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-price">
+                  <span class="price-label"><s>Rp149.000</s></span>
+                  <span class="price-value">Rp79.000</span>
+                </div>
+                <button class="btn btn-primary btn-sm">Enroll Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-level="beginner">
+            <div class="course-image">
+              <img
+                src="https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Course"
+              />
+              <div class="course-badge">BEGINNER</div>
+            </div>
+            <div class="course-content">
+              <h3 class="course-title">Light & Shadow Mastery</h3>
+              <p class="course-desc">
+                Understand natural and artificial lighting. Learn to see, shape,
+                and control light for stunning photographs.
+              </p>
+              <div class="course-meta">
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M8 2V8L12 10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="6"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>6 weeks</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect
+                      x="2"
+                      y="4"
+                      width="12"
+                      height="10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M5 2V4M11 2V4"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>18 lessons</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle
+                      cx="8"
+                      cy="5"
+                      r="2.5"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M2 14C2 11 4.5 9 8 9C11.5 9 14 11 14 14"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>2.8K students</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-price">
+                  <span class="price-label"><s>Rp149.000</s></span>
+                  <span class="price-value">Rp79.000</span>
+                </div>
+                <button class="btn btn-primary btn-sm">Enroll Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-level="intermediate">
+            <div class="course-image">
+              <img
+                src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Course"
+              />
+              <div class="course-badge">INTERMEDIATE</div>
+            </div>
+            <div class="course-content">
+              <h3 class="course-title">Portrait Photography Pro</h3>
+              <p class="course-desc">
+                Advanced portrait techniques including posing, expression
+                direction, and environmental portraiture for professional
+                results.
+              </p>
+              <div class="course-meta">
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M8 2V8L12 10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="6"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>10 weeks</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect
+                      x="2"
+                      y="4"
+                      width="12"
+                      height="10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M5 2V4M11 2V4"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>32 lessons</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle
+                      cx="8"
+                      cy="5"
+                      r="2.5"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M2 14C2 11 4.5 9 8 9C11.5 9 14 11 14 14"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>4.5K students</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-price">
+                  <span class="price-label">Rp199.000</span>
+                  <span class="price-value">Rp99.000</span>
+                </div>
+                <button class="btn btn-primary btn-sm">Enroll Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-level="intermediate">
+            <div class="course-image">
+              <img
+                src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Course"
+              />
+              <div class="course-badge">INTERMEDIATE</div>
+            </div>
+            <div class="course-content">
+              <h3 class="course-title">Landscape Photography</h3>
+              <p class="course-desc">
+                Capture breathtaking landscapes with advanced composition, HDR
+                techniques, and post-processing workflows.
+              </p>
+              <div class="course-meta">
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M8 2V8L12 10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="6"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>8 weeks</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect
+                      x="2"
+                      y="4"
+                      width="12"
+                      height="10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M5 2V4M11 2V4"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>28 lessons</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle
+                      cx="8"
+                      cy="5"
+                      r="2.5"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M2 14C2 11 4.5 9 8 9C11.5 9 14 11 14 14"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>3.7K students</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-price">
+                  <span class="price-label"><s>Rp199.000</s></span>
+                  <span class="price-value">Rp99.000</span>
+                </div>
+                <button class="btn btn-primary btn-sm">Enroll Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-level="advanced">
+            <div class="course-image">
+              <img
+                src="https://images.pexels.com/photos/1089934/pexels-photo-1089934.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Course"
+              />
+              <div class="course-badge">ADVANCED</div>
+            </div>
+            <div class="course-content">
+              <h3 class="course-title">Commercial Photography</h3>
+              <p class="course-desc">
+                Professional product and advertising photography. Learn studio
+                lighting, retouching, and client management.
+              </p>
+              <div class="course-meta">
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M8 2V8L12 10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="6"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>12 weeks</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect
+                      x="2"
+                      y="4"
+                      width="12"
+                      height="10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M5 2V4M11 2V4"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>40 lessons</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle
+                      cx="8"
+                      cy="5"
+                      r="2.5"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M2 14C2 11 4.5 9 8 9C11.5 9 14 11 14 14"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>2.1K students</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-price">
+                  <span class="price-label"><s>Rp299.000</s></span>
+                  <span class="price-value">Rp149.000</span>
+                </div>
+                <button class="btn btn-primary btn-sm">Enroll Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card" data-level="advanced">
+            <div class="course-image">
+              <img
+                src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Course"
+              />
+              <div class="course-badge">ADVANCED</div>
+            </div>
+            <div class="course-content">
+              <h3 class="course-title">Advanced Post-Processing</h3>
+              <p class="course-desc">
+                Master Lightroom and Photoshop. Advanced color grading,
+                compositing, and professional retouching techniques.
+              </p>
+              <div class="course-meta">
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M8 2V8L12 10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="6"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>10 weeks</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect
+                      x="2"
+                      y="4"
+                      width="12"
+                      height="10"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M5 2V4M11 2V4"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>35 lessons</span>
+                </div>
+                <div class="meta-item">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle
+                      cx="8"
+                      cy="5"
+                      r="2.5"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M2 14C2 11 4.5 9 8 9C11.5 9 14 11 14 14"
+                      stroke="#39d0c5"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <span>5.2K students</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <div class="course-price">
+                  <span class="price-label"><s>Rp299.000</s></span>
+                  <span class="price-value">Rp149.000</span>
+                </div>
+                <button class="btn btn-primary btn-sm">Enroll Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <img src="assets/Logo LensIQ.png" alt="" class="logo" />
+            <p class="footer-tagline">Learn From Your Moment</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Platform</h4>
+              <ul>
+                <li><a href="analyzer.html">EXIF Analyzer</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="community.html">Community</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 LensIQ. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/courses.js"></script>
+  </body>
+</html>

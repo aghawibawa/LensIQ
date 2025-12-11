@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXIF Analyzer - LensIQ</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="analyzer-page">
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="currentColor"
+        class="bi bi-caret-up-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"
+        />
+      </svg>
+    </button>
+
+    <div class="scan-overlay"></div>
+
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-brand">
+          <div class="logo-bracket">[</div>
+          <span class="logo-text">LensIQ</span>
+          <div class="logo-bracket">]</div>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="analyzer.html" class="active">EXIF Analyzer</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <section class="analyzer-hero">
+      <div class="container">
+        <div class="data-label">EXIF_ANALYSIS_ENGINE</div>
+        <h1 class="page-title">Photo Analyzer</h1>
+        <p class="page-subtitle">
+          Upload your photos to extract EXIF data, generate histograms, and
+          receive smart photography tips
+        </p>
+      </div>
+    </section>
+
+    <section class="analyzer-main">
+      <div class="container">
+        <div class="analyzer-layout">
+          <div class="upload-zone" id="uploadZone">
+            <div class="viewfinder-tl"></div>
+            <div class="viewfinder-tr"></div>
+            <div class="viewfinder-bl"></div>
+            <div class="viewfinder-br"></div>
+
+            <input type="file" id="fileInput" accept="image/*" hidden />
+
+            <div class="upload-content" id="uploadContent">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                <rect
+                  x="10"
+                  y="20"
+                  width="60"
+                  height="50"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+                <circle
+                  cx="40"
+                  cy="40"
+                  r="12"
+                  stroke="#39d0c5"
+                  stroke-width="2"
+                />
+                <circle cx="60" cy="28" r="3" fill="#39d0c5" />
+                <path d="M40 10L40 20" stroke="#39d0c5" stroke-width="2" />
+                <path d="M25 15L35 20" stroke="#39d0c5" stroke-width="2" />
+                <path d="M55 15L45 20" stroke="#39d0c5" stroke-width="2" />
+              </svg>
+              <h3>Drop your image here</h3>
+              <p>or click to browse</p>
+              <div class="supported-formats">
+                <span class="format-badge">JPG</span>
+                <span class="format-badge">PNG</span>
+                <span class="format-badge">HEIC</span>
+                <span class="format-badge">RAW</span>
+              </div>
+            </div>
+
+            <div class="preview-content hidden" id="previewContent">
+              <img id="previewImage" alt="Preview" />
+              <div class="preview-actions">
+                <button class="btn btn-primary" id="analyzeBtn">
+                  <span>Analyze Photo</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M10 4V16M4 10H16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </button>
+                <button class="btn btn-outline" id="clearBtn">Clear</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="results-panel hidden" id="resultsPanel">
+            <div class="data-panel">
+              <div class="panel-header">
+                <span class="panel-label">EXIF_DATA</span>
+                <div class="pulse-indicator"></div>
+              </div>
+              <div class="exif-data-grid" id="exifData">
+                <div class="loading-spinner"></div>
+              </div>
+            </div>
+
+            <div class="data-panel">
+              <div class="panel-header">
+                <span class="panel-label">HISTOGRAM_ANALYSIS</span>
+              </div>
+              <div class="histogram-container">
+                <canvas id="histogramCanvas" width="600" height="300"></canvas>
+              </div>
+              <div class="histogram-legend">
+                <div class="legend-item">
+                  <span class="legend-color" style="background: #ff4444"></span>
+                  <span>Red Channel</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color" style="background: #44ff44"></span>
+                  <span>Green Channel</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color" style="background: #4444ff"></span>
+                  <span>Blue Channel</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="data-panel">
+              <div class="panel-header">
+                <span class="panel-label">SMART_TIPS</span>
+              </div>
+              <div class="tips-container" id="tipsContainer">
+                <div class="loading-spinner"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <img src="assets/Logo LensIQ.png" alt="" class="logo" />
+            <p class="footer-tagline">Learn From Your Moment</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h4>Platform</h4>
+              <ul>
+                <li><a href="analyzer.html">EXIF Analyzer</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="community.html">Community</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 LensIQ. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/exif-parser.js"></script>
+    <script src="js/analyzer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+  </body>
+</html>
