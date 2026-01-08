@@ -343,19 +343,28 @@ class SmartTipsEngine {
 
   analyzeShutterSpeed() {
     const shutter = this.exif.shutterSpeed;
-    const speed = this.parseShutterSpeed(shutter);
+    const value = this.parseShutterSpeed(shutter);
 
-    if (speed < 1 / 60) {
-      this.tips.push({
-        title: "Slow Shutter Speed",
-        description: `${shutter} risks camera shake. Use a tripod or increase ISO/aperture. As a rule of thumb, use 1/focal_length minimum for handheld shots.`,
-        type: "warning",
-      });
-    } else if (speed >= 1 / 1000) {
+    if (value === null) return;
+
+    // Jika format 1/x
+    if (value >= 1000) {
       this.tips.push({
         title: "Fast Shutter Speed",
-        description: `${shutter} freezes motion perfectly. Excellent for sports, wildlife, and action photography. Ensure adequate light to maintain proper exposure.`,
+        description: `${shutter} freezes motion perfectly. Ideal for sports, wildlife, and action photography.`,
         type: "success",
+      });
+    } else if (value <= 60) {
+      this.tips.push({
+        title: "Slow Shutter Speed",
+        description: `${shutter} risks camera shake. Use a tripod or increase ISO/aperture.`,
+        type: "warning",
+      });
+    } else {
+      this.tips.push({
+        title: "Balanced Shutter Speed",
+        description: `${shutter} provides a good balance between sharpness and motion control.`,
+        type: "info",
       });
     }
   }
@@ -432,10 +441,20 @@ class SmartTipsEngine {
   }
 
   parseShutterSpeed(shutter) {
-    const match = shutter.match(/1\/(\d+)/);
-    if (match) {
-      return 1 / parseInt(match[1]);
+    if (!shutter || shutter === "Unknown") return null;
+
+    // 1/1000s → return 1000
+    const fractionMatch = shutter.match(/1\s*\/\s*(\d+)/);
+    if (fractionMatch) {
+      return Number(fractionMatch[1]);
     }
-    return parseFloat(shutter);
+
+    // 0.5s, 2s → return seconds
+    const decimalMatch = shutter.match(/([\d.]+)\s*s?/);
+    if (decimalMatch) {
+      return 1 / Number(decimalMatch[1]);
+    }
+
+    return null;
   }
 }
